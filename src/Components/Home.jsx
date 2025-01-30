@@ -77,7 +77,7 @@ const Home = () => {
   // Below the grid of cards for performance improvements
   const cards = useMemo(
     () =>
-      ["about", "projects", "skills", "contact"].map((category, i) => {
+      ["about", "project", "skills", "contact"].map((category, i) => {
         const icons = [FaUser, FaProjectDiagram, FaTools, FaEnvelope];
         const titles = ["About Me", "Projects", "Skills", "Contact"];
         const descriptions = [
