@@ -1,7 +1,8 @@
-:root{
+:root {
     --text-color: #ffffff;
     --font-family: "Poppins", sans-serif;
 }
+
 .homeContainer {
     padding: 20px;
     background-color: #4B0082;
@@ -9,17 +10,17 @@
 
 .homeTitle {
     text-align: center;
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 5vw, 2.8rem);
     font-family: var(--font-family);
     font-weight: 700;
     color: var(--text-color);
     margin-bottom: 3rem;
     position: relative;
-    background: linear-gradient(90deg, #f1f1f1, #6287ff); 
+    background: linear-gradient(90deg, #f1f1f1, #6287ff);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    letter-spacing: 1px; 
-    text-transform: uppercase; 
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .homeTitle::after {
@@ -37,9 +38,8 @@
 }
 
 .homeTitle:hover::after {
-    width: 160px; 
+    width: 160px;
 }
-
 
 /* Card grid */
 .cardGrid {
@@ -72,7 +72,7 @@
 
 .cardIcon {
     font-size: 1.5rem;
-    color: #0b5aee;  
+    color: #0b5aee;
 }
 
 .cardTitle {
@@ -118,6 +118,7 @@
     transform: scale(1.15);
     filter: brightness(0.85);
 }
+
 /* Dots container */
 .dotsContainer {
     position: absolute;
@@ -126,9 +127,9 @@
     transform: translateX(-50%);
     display: flex;
     gap: 8px;
-  }
+}
 
-  .dot {
+.dot {
     width: 12px;
     height: 12px;
     border: 2px solid #fff;
@@ -136,28 +137,34 @@
     background-color: transparent;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .dot:hover {
+}
+
+.dot:hover {
     transform: scale(1.2);
-  }
-  
-  .activeDot {
+}
+
+.activeDot {
     background-color: #fff;
-  }
-  
+}
+
+/* --- RESPONSIVENESS --- */
 @media (max-width: 768px) {
     .homeContainer {
-        margin-left: 0;
+        padding: 3rem 1.5rem;
     }
 
     .homeTitle {
-        font-size: 2rem;
+        font-size: clamp(1.75rem, 4vw, 2.2rem);
     }
 
     .card {
+        width: 100%;
         height: auto;
         padding: 15px;
+    }
+
+    .cardImageContainer {
+        height: 180px;
     }
 
     .cardTitle {
@@ -167,15 +174,45 @@
     .cardDescription {
         font-size: 0.9rem;
     }
+
+    .dotsContainer {
+        gap: 6px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 @media (max-width: 480px) {
     .cardGrid {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 1rem;
     }
 
     .homeTitle {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .cardTitle {
+        font-size: 1.1rem;
+    }
+
+    .cardDescription {
+        font-size: 0.85rem;
+    }
+
+    .dotsContainer {
+        gap: 4px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
     }
 }
