@@ -1,16 +1,15 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from './Components/Sidebar';
-import Home from './Components/Home';
-import About from './Components/About';
-import Project from './Components/Project';
-import Skills from './Components/Skills';
-import Contact from './Components/Contact';
-
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Sidebar from "./Components/Sidebar";
+import Home from "./Components/Home";
+import About from "./Components/About";
+import Project from "./Components/Project";
+import Skills from "./Components/Skills";
+import Contact from "./Components/Contact";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/my-portfolio">
       <Sidebar />
       <Routes>
         {/* Home as the default route */}
